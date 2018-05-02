@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #f8f7f7; }
+
+.list {
+  margin: 50px 0;
+  padding: 0;
+  display: flex;
+  padding-bottom: 10vw;
+  width: 100%; }
+  .list.photo {
+    background-image: url(https://picsum.photos/1200/900?random);
+    background-position: center center;
+    background-size: cover; }
+
+.item {
+  flex: 1 0 auto;
+  margin: 0 10px;
+  list-style: none inside;
+  height: 20vw;
+  padding-top: 50px;
+  color: #fff;
+  text-align: center; }
+  .item.linear {
+    background-image: linear-gradient(to bottom, #000, transparent); }
+  .item.scrim {
+    background-image: linear-gradient(to bottom, rgba(0,0,0, 1) 0%, rgba(0,0,0, 0.738) 19%, rgba(0,0,0, 0.541) 34%, rgba(0,0,0, 0.382) 47%, rgba(0,0,0, 0.278) 56.5%, rgba(0,0,0, 0.194) 65%, rgba(0,0,0, 0.126) 73%, rgba(0,0,0, 0.075) 80.2%, rgba(0,0,0, 0.042) 86.1%, rgba(0,0,0, 0.021) 91%, rgba(0,0,0, 0.008) 95.2%, rgba(0,0,0, 0.002) 98.2%, rgba(0,0,0, 0) 100%); }
+  .item.easeOutSine {
+    background-image: linear-gradient(to bottom, rgba(0,0,0, 1) 0%, rgba(0,0,0, 0.917) 5.3%, rgba(0,0,0, 0.834) 10.6%, rgba(0,0,0, 0.753) 15.9%, rgba(0,0,0, 0.672) 21.3%, rgba(0,0,0, 0.591) 26.8%, rgba(0,0,0, 0.511) 32.5%, rgba(0,0,0, 0.433) 38.4%, rgba(0,0,0, 0.357) 44.5%, rgba(0,0,0, 0.283) 50.9%, rgba(0,0,0, 0.213) 57.7%, rgba(0,0,0, 0.147) 65%, rgba(0,0,0, 0.089) 72.9%, rgba(0,0,0, 0.042) 81.4%, rgba(0,0,0, 0.011) 90.6%, rgba(0,0,0, 0) 100%); }
+  .item.any-1 {
+    background-image: linear-gradient(to right, rgba(0,0,0, 1) 0%, rgba(0,0,0, 0.738) 19%, rgba(0,0,0, 0.541) 34%, rgba(0,0,0, 0.382) 47%, rgba(0,0,0, 0.278) 56.5%, rgba(0,0,0, 0.194) 65%, rgba(0,0,0, 0.126) 73%, rgba(0,0,0, 0.075) 80.2%, rgba(0,0,0, 0.042) 86.1%, rgba(0,0,0, 0.021) 91%, rgba(0,0,0, 0.008) 95.2%, rgba(0,0,0, 0.002) 98.2%, rgba(0,0,0, 0) 100%); }
+  .item.any-2 {
+    background-image: linear-gradient(45deg, rgba(0,0,0, 1) 0%, rgba(0,0,0, 0.738) 19%, rgba(0,0,0, 0.541) 34%, rgba(0,0,0, 0.382) 47%, rgba(0,0,0, 0.278) 56.5%, rgba(0,0,0, 0.194) 65%, rgba(0,0,0, 0.126) 73%, rgba(0,0,0, 0.075) 80.2%, rgba(0,0,0, 0.042) 86.1%, rgba(0,0,0, 0.021) 91%, rgba(0,0,0, 0.008) 95.2%, rgba(0,0,0, 0.002) 98.2%, rgba(0,0,0, 0) 100%); }
+  .item.any-3 {
+    background-image: linear-gradient(to bottom, rgba(255,153,0, 1) 0%, rgba(255,153,0, 0.738) 19%, rgba(255,153,0, 0.541) 34%, rgba(255,153,0, 0.382) 47%, rgba(255,153,0, 0.278) 56.5%, rgba(255,153,0, 0.194) 65%, rgba(255,153,0, 0.126) 73%, rgba(255,153,0, 0.075) 80.2%, rgba(255,153,0, 0.042) 86.1%, rgba(255,153,0, 0.021) 91%, rgba(255,153,0, 0.008) 95.2%, rgba(255,153,0, 0.002) 98.2%, rgba(255,153,0, 0) 100%); }
+  .item.any-4 {
+    background-image: linear-gradient(to bottom, rgba(255,153,0, 0.5) 0%, rgba(255,153,0, 0.369) 19%, rgba(255,153,0, 0.2705) 34%, rgba(255,153,0, 0.191) 47%, rgba(255,153,0, 0.139) 56.5%, rgba(255,153,0, 0.097) 65%, rgba(255,153,0, 0.063) 73%, rgba(255,153,0, 0.0375) 80.2%, rgba(255,153,0, 0.021) 86.1%, rgba(255,153,0, 0.0105) 91%, rgba(255,153,0, 0.004) 95.2%, rgba(255,153,0, 0.001) 98.2%, rgba(255,153,0, 0) 100%); }

@@ -1,0 +1,30 @@
+{
+  "name": "smooth-gradient-sass-function",
+  "version": "1.0.0",
+  "description": "sass function for smooth gradient",
+  "main": "index.html",
+  "dependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node-sass src/test.scss test/test.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oti/smooth-gradient-sass-function.git"
+  },
+  "keywords": [
+    "css",
+    "smooth",
+    "gradient",
+    "scss",
+    "sass function"
+  ],
+  "author": "oti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oti/smooth-gradient-sass-function/issues"
+  },
+  "homepage": "https://github.com/oti/smooth-gradient-sass-function#readme"
+}

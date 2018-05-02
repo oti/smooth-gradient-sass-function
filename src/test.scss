@@ -1,0 +1,56 @@
+@import 'smooth-gradient';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f7f7;
+}
+
+.list {
+  margin: 50px 0;
+  padding: 0;
+  display: flex;
+  padding-bottom: 10vw;
+  width: 100%;
+  &.photo {
+    background-image: url(https://picsum.photos/1200/900?random);
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+.item {
+  flex: 1 0 auto;
+  margin: 0 10px;
+  list-style: none inside;
+  height: 20vw;
+
+  padding-top: 50px;
+  color: #fff;
+  text-align: center;
+
+  &.linear {
+    background-image: linear-gradient(to bottom, #000, transparent);
+  }
+  &.scrim {
+    background-image: linear-gradient(to bottom, scrim-gradient(#000));
+  }
+  &.easeOutSine {
+    background-image: linear-gradient(to bottom, easeOutSine-gradient(#000));
+  }
+
+  &.any-1 {
+    background-image: linear-gradient(to right, scrim-gradient());
+  }
+  &.any-2 {
+    background-image: linear-gradient(45deg, scrim-gradient());
+  }
+  &.any-3 {
+    background-image: linear-gradient(to bottom, scrim-gradient(#ff9900));
+  }
+  &.any-4 {
+    background-image: linear-gradient(to bottom, scrim-gradient(#ff9900, 0.5));
+  }
+}
