@@ -19,7 +19,7 @@
     "type": "git",
     "url": "https://github.com/oti/smooth-gradient-sass-function"
   },
-  "license": "",
+  "license": "MIT",
   "scripts": {
     "start": "gulp",
     "build": "gulp build"
