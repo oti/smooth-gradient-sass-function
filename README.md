@@ -13,7 +13,7 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 ```scss
 // `scrim` smoothing
 @function scrim-gradient($color: #000, $opacity: 1) {
-  $scrim-gradient: (
+  $scrim: (
     // alpha: stop
     1: 0%,
     0.738: 19%,
@@ -34,7 +34,7 @@ Gradients are scrim, easeOutSine, and clothoid curve.
   }
   $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
   $color-stops: ();
-  @each $key, $value in $scrim-gradient {
+  @each $key, $value in $scrim {
     $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
   }
   @return $color-stops;
@@ -44,7 +44,7 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 ```scss
 // `easeOutSine` smoothing
 @function easeOutSine-gradient($color: #000, $opacity: 1) {
-  $easeOutSine-gradient: (
+  $easeOutSine: (
     // alpha: stop
     1: 0%,
     0.917: 5.3%,
@@ -68,7 +68,7 @@ Gradients are scrim, easeOutSine, and clothoid curve.
   }
   $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
   $color-stops: ();
-  @each $key, $value in $easeOutSine-gradient {
+  @each $key, $value in $easeOutSine {
     $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
   }
   @return $color-stops;
@@ -107,14 +107,13 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 
 ```shell
 git clone git@github.com:oti/smooth-gradient-sass-function.git
-mv smooth-gradient-sass-function/src/_smooth-gradient.scss <your project>/<scss dirctory>
+mv smooth-gradient-sass-function/src/_smooth-gradient.scss your/project/scss/path
 ```
 
 2) `@import` in your .scss file.
 
 ```Sass
-// Example
-@import '<your scss partial file directory>/smooth-gradient';
+@import 'your/project/scss/path/smooth-gradient';
 ```
 
 ### from npm
@@ -128,7 +127,6 @@ npm i smooth-gradient-sass-function
 2) `@import` in your .scss file.
 
 ```Sass
-// Example
 @import '../(to project root)/node_modules/smooth-gradient-sass-function/src/smooth-gradient';
 ```
 
@@ -137,9 +135,9 @@ npm i smooth-gradient-sass-function
 3) write `scrim-gradient()` sass function and argument in argument of native `linear-gradient()` function.
 
 ```Sass
-// Example
 .elem {
-  background-image: linear-gradient(to bottom, scrim-gradient()); // default color is `#000`, start opacity is `1`
+  // default color is `#000`, start opacity is `1`
+  background-image: linear-gradient(to bottom, scrim-gradient());
 }
 ```
 
