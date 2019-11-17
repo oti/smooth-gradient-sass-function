@@ -1,30 +1,34 @@
 {
   "name": "smooth-gradient-sass-function",
-  "version": "1.0.0",
-  "description": "sass function for smooth gradient",
-  "main": "index.html",
-  "dependencies": {
-    "node-sass": "^4.9.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "node-sass src/test.scss test/test.css -w"
+  "version": "2.0.0",
+  "description": "You can get smooth gradient color-stops map for sass linear-gradient",
+  "author": {
+    "name": "oti",
+    "email": "otiext@gmail.com",
+    "url": "https://dskd.jp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oti/smooth-gradient-sass-function.git"
+    "url": "https://github.com/oti/smooth-gradient-sass-function"
   },
-  "keywords": [
-    "css",
-    "smooth",
-    "gradient",
-    "scss",
-    "sass function"
+  "license": "",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "browserslist": [
+    "last 2 versions"
   ],
-  "author": "oti",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/oti/smooth-gradient-sass-function/issues"
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   },
-  "homepage": "https://github.com/oti/smooth-gradient-sass-function#readme"
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0"
+  }
 }
