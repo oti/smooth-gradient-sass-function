@@ -1,0 +1,10 @@
+.Main {
+  @at-root {
+    & {
+      box-sizing: border-box;
+      margin: auto;
+      padding: var(--spaceGap);
+      max-width: var(--mainWidth);
+    }
+  }
+}

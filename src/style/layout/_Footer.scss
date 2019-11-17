@@ -1,0 +1,43 @@
+.Footer {
+  @at-root {
+    & {
+      color: var(--colorBg);
+      font-size: 0.75rem;
+      line-height: 1.2;
+      background-color: var(--colorPrimaryDark);
+    }
+
+    .Footer__inner {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+      padding: 0.5rem;
+      max-width: var(--mainWidth);
+    }
+
+
+    .Footer__credit {
+      a:link,
+      a:visited,
+      a:hover,
+      a:focus,
+      a:active {
+        color: var(--colorPrimaryLight);
+        text-decoration: underline;
+      }
+    }
+
+    .Footer__license {
+      a:link,
+      a:visited,
+      a:hover,
+      a:focus,
+      a:active {
+        color: var(--colorPrimaryLight);
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.Header {
+  @at-root {
+    & {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: calc(var(--spaceGap) * 2);
+      color: var(--colorBg);
+      background-color: var(--colorPrimaryDark);
+    }
+
+    .Header__inner {
+      padding-right: var(--spaceGap);
+      padding-left: var(--spaceGap);
+      max-width: var(--mainWidth);
+    }
+
+    .Header__title {
+      margin: 0;
+      font-size: 2.4rem;
+      line-height: 1.2;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+:root {
+  font-size: 16px;
+  --spaceGap: 10px;
+  --mainWidth: 768px;
+  --colorPrimaryDark: #ac1557;
+  --colorPrimaryLight: #fce4ec;
+  --colorSecondaryDark: #303f9f;
+  --colorSecondaryLight: #e8eaf6;
+  --colorBg: #fefcfc;
+  --colorBorder: #f0eaea;
+}
+
+*,*::before,*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans', sans-self;
+  font-size: 1rem;
+  color: var(--colorPrimaryDark);
+  hanging-punctuation: allow-end;
+  background-color: var(--colorBg);
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  border: 0 none;
+  text-decoration: none;
+  vertical-align: top;
+  background: transparent;
+}
+
+mark {
+  background-color: transparent;
+}
+
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--colorPrimaryLight);
+    text-decoration: none;
+  }
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+}

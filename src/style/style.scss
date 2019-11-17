@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+@import 'config/placeholder';
+@import 'config/mixin';
+
+@import 'foundation/normalize';
+@import 'foundation/base';
+
+// レイアウト
+@import 'layout/Header';
+@import 'layout/Footer';
+@import 'layout/Main';
+
+// コンポーネント
+@import 'object/component/*';
+
+// プロジェクト
+@import 'object/project/*';
+
+// ユーティリティー
+@import 'object/utility/*';
