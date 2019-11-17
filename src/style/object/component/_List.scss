@@ -1,0 +1,80 @@
+@import '../../../smooth-gradient';
+
+.List {
+  @at-root {
+    & {
+      --colWidth: calc((var(--mainWidth) - var(--spaceGap) * 6) / 4);
+
+      display: flex;
+      gap: var(--spaceGap);
+      justify-content: space-between;
+    }
+
+    .List__item {
+      box-sizing: border-box;
+      list-style: none inside;
+      
+      flex: 1 1 auto;
+
+      display: flex;
+      flex-direction: column;
+
+      border: 1px solid var(--colorBorder);
+      border-radius: 4px;
+      min-width: var(--colWidth);
+      max-width: var(--colWidth);
+      height: 300px;
+      color: #fff;
+      text-align: center;
+    
+      &.-linear {
+        background-image: linear-gradient(to bottom, #000, transparent);
+      }
+      &.-scrim {
+        background-image: linear-gradient(to bottom, scrim-gradient());
+      }
+      &.-easeOutSine {
+        background-image: linear-gradient(to bottom, easeOutSine-gradient());
+      }
+      &.-clothoid {
+        background-image: linear-gradient(to bottom, clothoid-gradient());
+      }
+
+      &.-image {
+        background-position: center center;
+        background-size: cover;
+
+        &.-linear {
+          background-image: linear-gradient(to bottom, #000, transparent), url(https://picsum.photos/175/300?random);
+        }
+        &.-scrim {
+          background-image: linear-gradient(to bottom, scrim-gradient()), url(https://picsum.photos/175/300?random);
+        }
+        &.-easeOutSine {
+          background-image: linear-gradient(to bottom, easeOutSine-gradient()), url(https://picsum.photos/175/300?random);
+        }
+        &.-clothoid {
+          background-image: linear-gradient(to bottom, clothoid-gradient()), url(https://picsum.photos/175/300?random);
+        }
+      }
+    
+      &.-any1 {
+        background-image: linear-gradient(to right, scrim-gradient());
+      }
+      &.-any2 {
+        background-image: linear-gradient(45deg, scrim-gradient());
+      }
+      &.-any3 {
+        background-image: linear-gradient(to bottom, scrim-gradient(#ff0000));
+      }
+      &.-any4 {
+        background-image: linear-gradient(to bottom, scrim-gradient(#000000, 0.5));
+      }
+    }
+
+    .List__label {
+      padding-top: calc(var(--spaceGap) * 1.5);
+      padding-bottom: calc(var(--spaceGap) * 1.5);
+    }
+  }
+}

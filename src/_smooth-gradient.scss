@@ -1,7 +1,6 @@
 // `scrim` smoothing
-@function scrim-gradient($color: #000, $opacity: 1) {
-  $scrim-gradient: (
-    // alpha: stop
+@function scrim-gradient($color: #000000, $opacity: 1) {
+  $scrim: (
     1: 0%,
     0.738: 19%,
     0.541: 34%,
@@ -21,17 +20,15 @@
   }
   $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
   $color-stops: ();
-  @each $key, $value in $scrim-gradient {
+  @each $key, $value in $scrim {
     $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
   }
   @return $color-stops;
 }
 
-
 // `easeOutSine` smoothing
-@function easeOutSine-gradient($color: #000, $opacity: 1) {
-  $easeOutSine-gradient: (
-    // alpha: stop
+@function easeOutSine-gradient($color: #000000, $opacity: 1) {
+  $easeOutSine: (
     1: 0%,
     0.917: 5.3%,
     0.834: 10.6%,
@@ -54,7 +51,29 @@
   }
   $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
   $color-stops: ();
-  @each $key, $value in $easeOutSine-gradient {
+  @each $key, $value in $easeOutSine {
+    $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
+  }
+  @return $color-stops;
+}
+
+// `clothoid` smoothing
+@function clothoid-gradient($color: #000000, $opacity: 1) {
+  $clothoid: (
+    1: 0%,
+    0.3: 50%,
+    0.15: 65%,
+    0.075: 75.5%,
+    0.037: 82.85%,
+    0.019: 88%,
+    0: 100%
+  );
+  @if type-of($color) != color {
+    @return null;
+  }
+  $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
+  $color-stops: ();
+  @each $key, $value in $clothoid {
     $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
   }
   @return $color-stops;

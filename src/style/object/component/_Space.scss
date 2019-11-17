@@ -1,0 +1,17 @@
+.Space {
+  @at-root {
+    & {
+      height: var(--spaceGap);
+
+      &.-lg {
+        height: calc(var(--spaceGap) * 5);
+      }
+      &.-md {
+        height: calc(var(--spaceGap) * 3);
+      }
+      &.-sm {
+        height: calc(var(--spaceGap) * 1.5);
+      }
+    }
+  }
+}
