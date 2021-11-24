@@ -3,6 +3,9 @@
   "version": "2.1.0",
   "description": "You can get smooth gradient color-stops map for sass linear-gradient",
   "main": "_gradients.scss",
+  "files": [
+    "src/_smooth-gradient.scss"
+  ],
   "keywords": [
     "smooth",
     "gradient",
