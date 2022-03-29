@@ -27,7 +27,7 @@
 }
 
 // `scrim` smoothing
-@function scrim-gradient($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
+@function scrim($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
   $valid: _validate($color, $opacity, $start, $end);
   $scrim: (
     1: 0,
@@ -48,7 +48,7 @@
 }
 
 // `easeOutSine` smoothing
-@function easeOutSine-gradient($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
+@function easeOutSine($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
   $valid: _validate($color, $opacity, $start, $end);
   $easeOutSine: (
     1: 0,
@@ -72,7 +72,7 @@
 }
 
 // `clothoid` smoothing
-@function clothoid-gradient($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
+@function clothoid($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
   $valid: _validate($color, $opacity, $start, $end);
   $clothoid: (
     1: 0,
