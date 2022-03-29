@@ -1,3 +1,5 @@
+@use 'sass:color';
+@use 'sass:list';
 @use 'sass:math';
 @use 'sass:meta';
 
@@ -12,6 +14,16 @@
     @error '$start and $end values must be compatible: were #{$start} and #{$end}';
   }
   @return true;
+}
+
+@function _make-gradient-list($map, $color, $opacity, $start, $end) {
+  $color-stops: ();
+  @each $key, $mod in $map {
+    $position: $mod * $end + $start;
+    $new-stop: color.change($color, $alpha: $key * $opacity);
+    $color-stops: list.append($color-stops, $new-stop $position, "comma");
+  }
+  @return $color-stops;
 }
 
 // `scrim` smoothing
@@ -32,13 +44,7 @@
     0.002: 0.982,
     0: 1
   );
-  $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
-  $color-stops: ();
-  @each $key, $mod in $scrim {
-    $value: $mod * $end + $start;
-    $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
-  }
-  @return $color-stops;
+  @return _make-gradient-list($scrim, $color, $opacity, $start, $end);
 }
 
 // `easeOutSine` smoothing
@@ -62,13 +68,7 @@
     0.011: 0.906,
     0: 1
   );
-  $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
-  $color-stops: ();
-  @each $key, $mod in $easeOutSine {
-    $value: $mod * $end + $start;
-    $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
-  }
-  @return $color-stops;
+  @return _make-gradient-list($easeOutSine, $color, $opacity, $start, $end);
 }
 
 // `clothoid` smoothing
@@ -83,11 +83,5 @@
     0.019: 0.88,
     0: 1
   );
-  $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
-  $color-stops: ();
-  @each $key, $mod in $clothoid {
-    $value: $mod * $end + $start;
-    $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
-  }
-  @return $color-stops;
+  @return _make-gradient-list($clothoid, $color, $opacity, $start, $end);
 }
