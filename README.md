@@ -12,7 +12,7 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 
 ```scss
 // `scrim` smoothing
-@function scrim-gradient($color: #000, $opacity: 1) {
+@function gradients.scrim($color: #000, $opacity: 1) {
   $scrim: (
     // alpha: stop
     1: 0%,
@@ -43,7 +43,7 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 
 ```scss
 // `easeOutSine` smoothing
-@function easeOutSine-gradient($color: #000, $opacity: 1) {
+@function gradients.easeOutSine($color: #000, $opacity: 1) {
   $easeOutSine: (
     // alpha: stop
     1: 0%,
@@ -77,7 +77,7 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 
 ```scss
 // `clothoid` smoothing
-@function clothoid-gradient($color: #000000, $opacity: 1) {
+@function gradients.clothoid($color: #000000, $opacity: 1) {
   $clothoid: (
     1: 0%,
     0.3: 50%,
@@ -110,34 +110,34 @@ git clone git@github.com:oti/smooth-gradient-sass-function.git
 mv smooth-gradient-sass-function/src/_smooth-gradient.scss your/project/scss/path
 ```
 
-2) `@import` in your .scss file.
+2) `@use` in your .scss file.
 
 ```Sass
-@import 'your/project/scss/path/smooth-gradient';
+@use 'your/project/scss/path/smooth-gradient' as gradients;
 ```
 
 ### from npm
 
-1) npm insatall.
+1) npm install.
 
 ```shell
 npm i smooth-gradient-sass-function
 ```
 
-2) `@import` in your .scss file.
+2) `@use` in your .scss file.
 
 ```Sass
-@import '../(to project root)/node_modules/smooth-gradient-sass-function/src/smooth-gradient';
+@use '../(to project root)/node_modules/smooth-gradient-sass-function/gradients';
 ```
 
 ### write function
 
-3) write `scrim-gradient()` sass function and argument in argument of native `linear-gradient()` function.
+3) write `gradients.scrim()` sass function and argument in argument of native `linear-gradient()` function.
 
 ```Sass
 .elem {
   // default color is `#000`, start opacity is `1`
-  background-image: linear-gradient(to bottom, scrim-gradient());
+  background-image: linear-gradient(to bottom, gradients.scrim());
 }
 ```
 
@@ -145,22 +145,32 @@ npm i smooth-gradient-sass-function
 
 ```scss
 .box {
-  background-image: linear-gradient(to right, scrim-gradient()); // start left
+  background-image: linear-gradient(to right, gradients.scrim()); // start left
 }
 ```
 ```scss
 .box {
-  background-image: linear-gradient(45deg, scrim-gradient()); // start left bottom
+  background-image: linear-gradient(45deg, gradients.scrim()); // start left bottom
 }
 ```
 ```scss
 .box {
-  background-image: linear-gradient(to bottom, scrim-gradient(#ff0000)); // 1st arg is start color code(default: #000)
+  background-image: linear-gradient(to bottom, gradients.scrim(#ff0000)); // 1st arg is start color code(default: #000)
 }
 ```
 ```scss
 .box {
-  background-image: linear-gradient(to bottom, scrim-gradient(#ffff00, 0.5)); // 2nd arg is start opacity(default: 1)
+  background-image: linear-gradient(to bottom, gradients.scrim(#ffff00, 0.5)); // 2nd arg is start opacity(default: 1)
+}
+```
+```scss
+.box {
+  background-image: linear-gradient(to bottom, gradients.scrim(#ffff00, 0.5, $start: 50%)); // 3rd arg is start position
+}
+```
+```scss
+.box {
+  background-image: linear-gradient(to bottom, gradients.scrim(#ffff00, 0.5, $start: 0, $end: 16em)); // 4th arg is end position
 }
 ```
 
