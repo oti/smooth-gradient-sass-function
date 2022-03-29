@@ -3,19 +3,6 @@
 @use 'sass:math';
 @use 'sass:meta';
 
-@function _validate($color, $opacity, $start, $end) {
-  @if meta.type-of($color) != color {
-    @error '$color must be a color, was #{$color}';
-  }
-  @if meta.type-of($opacity) != number or $opacity < 0 or $opacity > 1 {
-    @error '$opacity must be a number from 0 to 1, was #{$opacity}';
-  }
-  @if not math.compatible($start, $end) {
-    @error '$start and $end values must be compatible: were #{$start} and #{$end}';
-  }
-  @return true;
-}
-
 @function _make-gradient-list($map, $color, $opacity, $start, $end) {
   $color-stops: ();
   @each $key, $mod in $map {
@@ -28,7 +15,17 @@
 
 // `scrim` smoothing
 @function scrim($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
-  $valid: _validate($color, $opacity, $start, $end);
+  // validate arguments
+  @if meta.type-of($color) != color {
+    @error '$color must be a color, was #{$color}';
+  }
+  @if meta.type-of($opacity) != number or $opacity < 0 or $opacity > 1 {
+    @error '$opacity must be a number from 0 to 1, was #{$opacity}';
+  }
+  @if not math.compatible($start, $end) {
+    @error '$start and $end values must be compatible: were #{$start} and #{$end}';
+  }
+
   $scrim: (
     1: 0,
     0.738: 0.19,
@@ -49,7 +46,17 @@
 
 // `easeOutSine` smoothing
 @function easeOutSine($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
-  $valid: _validate($color, $opacity, $start, $end);
+  // validate arguments
+  @if meta.type-of($color) != color {
+    @error '$color must be a color, was #{$color}';
+  }
+  @if meta.type-of($opacity) != number or $opacity < 0 or $opacity > 1 {
+    @error '$opacity must be a number from 0 to 1, was #{$opacity}';
+  }
+  @if not math.compatible($start, $end) {
+    @error '$start and $end values must be compatible: were #{$start} and #{$end}';
+  }
+
   $easeOutSine: (
     1: 0,
     0.917: 0.053,
@@ -73,7 +80,17 @@
 
 // `clothoid` smoothing
 @function clothoid($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
-  $valid: _validate($color, $opacity, $start, $end);
+  // validate arguments
+  @if meta.type-of($color) != color {
+    @error '$color must be a color, was #{$color}';
+  }
+  @if meta.type-of($opacity) != number or $opacity < 0 or $opacity > 1 {
+    @error '$opacity must be a number from 0 to 1, was #{$opacity}';
+  }
+  @if not math.compatible($start, $end) {
+    @error '$start and $end values must be compatible: were #{$start} and #{$end}';
+  }
+
   $clothoid: (
     1: 0,
     0.3: 0.50,
