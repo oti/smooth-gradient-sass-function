@@ -6,7 +6,7 @@
 @function _make-gradient-list($map, $color, $opacity, $start, $end) {
   $color-stops: ();
   @each $key, $mod in $map {
-    $position: $mod * $end + $start;
+    $position: $mod * ($end - $start) + $start;
     $new-stop: color.change($color, $alpha: $key * $opacity);
     $color-stops: list.append($color-stops, $new-stop $position, "comma");
   }
