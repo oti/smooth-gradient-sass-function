@@ -105,14 +105,14 @@ html(lang="en")
 
       .Space.-sm
 
-      p.Text 2) @import in your .scss file.
+      p.Text 2) @use in your .scss file.
 
       .Space.-sm
 
       figure.Code
         pre.Code__item
           code.
-            @import 'your/project/scss/path/smooth-gradient';
+            @use 'your/project/scss/path/smooth-gradient' as gradients;
 
       .Space.-md
 
@@ -131,14 +131,14 @@ html(lang="en")
 
       .Space.-sm
 
-      p.Text 2) @import in your .scss file.
+      p.Text 2) @use in your .scss file.
 
       .Space.-sm
 
       figure.Code
         pre.Code__item
           code.
-            @import '../(to project root)/node_modules/smooth-gradient-sass-function/src/smooth-gradient';
+            @use '../(to project root)/node_modules/smooth-gradient-sass-function/gradients';
 
       .Space.-md
 
@@ -146,21 +146,21 @@ html(lang="en")
 
       .Space.-sm
 
-      p.Text 3) write scrim-gradient() sass function and argument in argument of native linear-gradient() function.
+      p.Text 3) write gradients.scrim() sass function and argument in argument of native linear-gradient() function.
 
       .Space.-sm
 
       figure.Code
         pre.Code__item
           code.
-            /* scrim gradinet */
-            background-image: linear-gradient(to bottom, scrim-gradient());
+            /* scrim gradient */
+            background-image: linear-gradient(to bottom, gradients.scrim());
             
             /* ease-out-sine gradient */
-            background-image: linear-gradient(to bottom, easeOutSine-gradient());
+            background-image: linear-gradient(to bottom, gradients.easeOutSine());
             
             /* clothoid gradient */
-            background-image: linear-gradient(to bottom, clothoid-gradient());
+            background-image: linear-gradient(to bottom, gradients.clothoid());
 
       .Space.-md
 
@@ -208,14 +208,14 @@ html(lang="en")
         pre.Code__item
           code.
             /* custom angle */
-            background-image: linear-gradient(to right, scrim-gradient());
-            background-image: linear-gradient(45deg, scrim-gradient());
+            background-image: linear-gradient(to right, gradients.scrim());
+            background-image: linear-gradient(45deg, gradients.scrim());
 
             /* #ff0000 color start (default is #000000) */
-            background-image: linear-gradient(to bottom, scrim-gradient(#ff0000));
+            background-image: linear-gradient(to bottom, gradients.scrim(#ff0000));
             
             /* 0.5 opacity start (default is 1) */
-            background-image: linear-gradient(to bottom, scrim-gradient(#000000, 0.5));
+            background-image: linear-gradient(to bottom, gradients.scrim(#000000, 0.5));
 
       .Space.-sm
 
