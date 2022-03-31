@@ -10,14 +10,16 @@
   --colorBorder: #f0eaea;
 }
 
-*,*::before,*::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Noto Sans', sans-self;
+  font-family: "Noto Sans", sans-serif;
   font-size: 1rem;
   color: var(--colorPrimaryDark);
   hanging-punctuation: allow-end;
@@ -48,5 +50,5 @@ a {
 }
 
 code {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
