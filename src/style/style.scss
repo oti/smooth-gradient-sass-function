@@ -1,20 +1,20 @@
 @charset 'UTF-8';
 
-@import "foundation/base";
+@use "foundation/base";
 
 // レイアウト
-@import "layout/Header";
-@import "layout/Footer";
-@import "layout/Main";
+@use "layout/Header";
+@use "layout/Footer";
+@use "layout/Main";
 
 // コンポーネント
-@import "object/component/Code";
-@import "object/component/Desc";
-@import "object/component/Heading";
-@import "object/component/List";
-@import "object/component/Space";
-@import "object/component/Subheading";
-@import "object/component/Text";
+@use "object/component/Code";
+@use "object/component/Desc";
+@use "object/component/Heading";
+@use "object/component/List";
+@use "object/component/Space";
+@use "object/component/Subheading";
+@use "object/component/Text";
 
 // ユーティリティー
-@import "object/utility/VisuallyHidden";
+@use "object/utility/VisuallyHidden";
