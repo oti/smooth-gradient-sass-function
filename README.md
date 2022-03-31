@@ -12,30 +12,34 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 
 ```scss
 // `scrim` smoothing
-@function gradients.scrim($color: #000, $opacity: 1) {
+@function scrim($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
+  // validate arguments
+  // ...
+
   $scrim: (
-    // alpha: stop
-    1: 0%,
-    0.738: 19%,
-    0.541: 34%,
-    0.382: 47%,
-    0.278: 56.5%,
-    0.194: 65%,
-    0.126: 73%,
-    0.075: 80.2%,
-    0.042: 86.1%,
-    0.021: 91%,
-    0.008: 95.2%,
-    0.002: 98.2%,
-    0: 100%
+    1: 0,
+    0.738: 0.19,
+    0.541: 0.34,
+    0.382: 0.47,
+    0.278: 0.565,
+    0.194: 0.65,
+    0.126: 0.73,
+    0.075: 0.802,
+    0.042: 0.861,
+    0.021: 0.91,
+    0.008: 0.952,
+    0.002: 0.982,
+    0: 1
   );
-  @if type-of($color) != color {
-    @return null;
-  }
-  $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
+  @return _make-gradient-list($scrim, $color, $opacity, $start, $end);
+}
+
+@function _make-gradient-list($map, $color, $opacity, $start, $end) {
   $color-stops: ();
-  @each $key, $value in $scrim {
-    $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
+  @each $key, $mod in $map {
+    $position: $mod * ($end - $start) + $start;
+    $new-stop: color.change($color, $alpha: $key * $opacity);
+    $color-stops: list.append($color-stops, $new-stop $position, "comma");
   }
   @return $color-stops;
 }
@@ -43,59 +47,48 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 
 ```scss
 // `easeOutSine` smoothing
-@function gradients.easeOutSine($color: #000, $opacity: 1) {
+@function easeOutSine($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
+  // validate arguments
+  // ...
+
   $easeOutSine: (
-    // alpha: stop
-    1: 0%,
-    0.917: 5.3%,
-    0.834: 10.6%,
-    0.753: 15.9%,
-    0.672: 21.3%,
-    0.591: 26.8%,
-    0.511: 32.5%,
-    0.433: 38.4%,
-    0.357: 44.5%,
-    0.283: 50.9%,
-    0.213: 57.7%,
-    0.147: 65%,
-    0.089: 72.9%,
-    0.042: 81.4%,
-    0.011: 90.6%,
-    0: 100%
+    1: 0,
+    0.917: 0.053,
+    0.834: 0.106,
+    0.753: 0.159,
+    0.672: 0.213,
+    0.591: 0.268,
+    0.511: 0.325,
+    0.433: 0.384,
+    0.357: 0.445,
+    0.283: 0.509,
+    0.213: 0.577,
+    0.147: 0.65,
+    0.089: 0.729,
+    0.042: 0.814,
+    0.011: 0.906,
+    0: 1
   );
-  @if type-of($color) != color {
-    @return null;
-  }
-  $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
-  $color-stops: ();
-  @each $key, $value in $easeOutSine {
-    $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
-  }
-  @return $color-stops;
+  @return _make-gradient-list($easeOutSine, $color, $opacity, $start, $end);
 }
 ```
 
 ```scss
 // `clothoid` smoothing
-@function gradients.clothoid($color: #000000, $opacity: 1) {
+@function clothoid($color: #000000, $opacity: 1, $start: 0, $end: 100%) {
+  // validate arguments
+  // ...
+
   $clothoid: (
-    1: 0%,
-    0.3: 50%,
-    0.15: 65%,
-    0.075: 75.5%,
-    0.037: 82.85%,
-    0.019: 88%,
-    0: 100%
+    1: 0,
+    0.3: 0.50,
+    0.15: 0.65,
+    0.075: 0.755,
+    0.037: 0.8285,
+    0.019: 0.88,
+    0: 1
   );
-  @if type-of($color) != color {
-    @return null;
-  }
-  $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
-  $color-stops: ();
-  @each $key, $value in $clothoid {
-    $color-stops: append($color-stops, unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"), "comma");
-  }
-  @return $color-stops;
+  @return _make-gradient-list($clothoid, $color, $opacity, $start, $end);
 }
 ```
 
