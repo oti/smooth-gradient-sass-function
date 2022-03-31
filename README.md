@@ -105,7 +105,7 @@ mv smooth-gradient-sass-function/src/_smooth-gradient.scss your/project/scss/pat
 
 2) `@use` in your .scss file.
 
-```Sass
+```scss
 @use 'your/project/scss/path/smooth-gradient' as gradients;
 ```
 
@@ -119,7 +119,7 @@ npm i smooth-gradient-sass-function
 
 2) `@use` in your .scss file.
 
-```Sass
+```scss
 @use '../(to project root)/node_modules/smooth-gradient-sass-function' as gradients;
 ```
 
@@ -127,7 +127,7 @@ npm i smooth-gradient-sass-function
 
 3) write `gradients.scrim()` sass function and argument in argument of native `linear-gradient()` function.
 
-```Sass
+```scss
 .elem {
   // default color is `#000`, start opacity is `1`
   background-image: linear-gradient(to bottom, gradients.scrim());
