@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "attr-duplication": true,
+    "attr-equal-space-after": true,
+    "attr-equal-space-before": true,
+    "attr-spacing": true,
+    "attr-value-quotes": true,
+    "character-reference": true,
+    "deprecated-attr": true,
+    "deprecated-element": true,
+    "doctype": true,
+    "id-duplication": true,
+    "landmark-roles": {
+      "value": true,
+      "option": {
+        "ignoreRoles": ["complementary"]
+      }
+    },
+    "permitted-contents": true,
+    "required-attr": true,
+    "required-h1": true,
+    "wai-aria": true
+  }
+}
