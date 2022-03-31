@@ -1,21 +1,23 @@
 @charset 'UTF-8';
 
-@import 'config/placeholder';
-@import 'config/mixin';
+@import "config/placeholder";
+@import "config/mixin";
 
-@import 'foundation/normalize';
-@import 'foundation/base';
+@import "foundation/base";
 
 // レイアウト
-@import 'layout/Header';
-@import 'layout/Footer';
-@import 'layout/Main';
+@import "layout/Header";
+@import "layout/Footer";
+@import "layout/Main";
 
 // コンポーネント
-@import 'object/component/*';
-
-// プロジェクト
-@import 'object/project/*';
+@import "object/component/Code";
+@import "object/component/Desc";
+@import "object/component/Heading";
+@import "object/component/List";
+@import "object/component/Space";
+@import "object/component/Subheading";
+@import "object/component/Text";
 
 // ユーティリティー
-@import 'object/utility/*';
+@import "object/utility/VisuallyHidden";
