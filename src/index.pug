@@ -8,24 +8,24 @@
 doctype html
 html(lang="en")
   head
-  meta(charset="utf-8")
-  title= _title
-  meta(name="viewport", content="width=device-width, initial-scale=1.0")
-  meta(name="description", content=_desc)
-  meta(name="keywords", content=_keywords)
+    meta(charset="utf-8")
+    title= _title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="description", content=_desc)
+    meta(name="keywords", content=_keywords)
 
-  link(
-    rel="stylesheet",
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Fira+Code&display=swap"
-  )
-  link(rel="stylesheet", href="style/style.scss")
+    link(
+      rel="stylesheet",
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Fira+Code&display=swap"
+    )
+    link(rel="stylesheet", href="style/style.scss")
 
-  link(rel="canonical", href=_permalink)
+    link(rel="canonical", href=_permalink)
 
   body
     header.Header
       .Header__inner
-        h1.Header__title Smooth Gradient Sass Function
+        h1.Header__title= _title
 
     main.Main
       .Space.-lg
@@ -213,7 +213,7 @@ html(lang="en")
 
       .Space.-sm
 
-      p.Text Function params are Start color & Start Opacity.
+      p.Text Function params are Start color &amp; Start Opacity.
 
       .Space.-sm
 
@@ -256,7 +256,7 @@ html(lang="en")
             rel="noopener"
           ) Naoki Matsuda
           |
-          | &
+          | &amp;
           a(
             href="https://codepen.io/lhermann/pen/qmpMGQ",
             target="_blank",
