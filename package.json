@@ -2,6 +2,10 @@
   "name": "smooth-gradient-sass-function",
   "version": "2.1.0",
   "description": "You can get smooth gradient color-stops map for sass linear-gradient",
+  "main": "_gradients.scss",
+  "files": [
+    "src/_smooth-gradient.scss"
+  ],
   "keywords": [
     "smooth",
     "gradient",
@@ -33,8 +37,9 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-plumber": "^1.2.1",
     "gulp-pug": "^4.0.1",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-sass-glob": "^1.1.0",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "sass": "^1.49.9"
   }
 }
