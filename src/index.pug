@@ -1,0 +1,268 @@
+-
+  const _title = "Smooth Gradient Sass Function"
+  const _desc = "You can get sass smooth gradient"
+  const _keywords = "smooth,gradient,sass,scss,function,css"
+  const _class = "top"
+  const _host = "https://smooth-gradient-sass-function.dskd.jp"
+  const _permalink = _host
+doctype html
+html(lang="en")
+  head
+  meta(charset="utf-8")
+  title= _title
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(name="description", content=_desc)
+  meta(name="keywords", content=_keywords)
+
+  link(
+    rel="stylesheet",
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Fira+Code&display=swap"
+  )
+  link(rel="stylesheet", href="style/style.scss")
+
+  link(rel="canonical", href=_permalink)
+
+  body
+    header.Header
+      .Header__inner
+        h1.Header__title Smooth Gradient Sass Function
+
+    main.Main
+      .Space.-lg
+
+      h2.Desc= _desc
+
+      .Space.-sm
+
+      p.Text Gradients are scrim, easeOutSine, and clothoid curve.
+
+      .Space.-sm
+
+      .Code
+        figure.Code__item.-col3
+          figcaption.VisuallyHidden Scrim gradient color-stop map
+          pre
+            code.
+              $scrim: (
+                1    : 0%,
+                0.738: 19%,
+                0.541: 34%,
+                0.382: 47%,
+                0.278: 56.5%,
+                0.194: 65%,
+                0.126: 73%,
+                0.075: 80.2%,
+                0.042: 86.1%,
+                0.021: 91%,
+                0.008: 95.2%,
+                0.002: 98.2%,
+                0    : 100%
+              );
+
+        figure.Code__item.-col3
+          figcaption.VisuallyHidden Ease-out-sine gradient color-stop map
+          pre
+            code.
+              $easeOutSine: (
+                1    : 0%,
+                0.917: 5.3%,
+                0.834: 10.6%,
+                0.753: 15.9%,
+                0.672: 21.3%,
+                0.591: 26.8%,
+                0.511: 32.5%,
+                0.433: 38.4%,
+                0.357: 44.5%,
+                0.283: 50.9%,
+                0.213: 57.7%,
+                0.147: 65%,
+                0.089: 72.9%,
+                0.042: 81.4%,
+                0.011: 90.6%,
+                0    : 100%
+              );
+
+        figure.Code__item.-col3
+          figcaption.VisuallyHidden Clothoid gradient color-stop map
+          pre
+            code.
+              $clothoid: (
+                1    : 0%,
+                0.3  : 50%,
+                0.15 : 65%,
+                0.075: 75.5%,
+                0.037: 82.85%,
+                0.019: 88%,
+                0    : 100%
+              );
+
+      .Space.-md
+
+      h3.Heading Usage
+
+      .Space.-sm
+
+      h4.Subheading from git
+
+      .Space.-sm
+
+      p.Text 1) git clone and move to your project.
+
+      .Space.-sm
+
+      figure.Code
+        pre.Code__item
+          code.
+            git clone git@github.com:oti/smooth-gradient-sass-function.git
+            mv smooth-gradient-sass-function/src/_smooth-gradient.scss your/project/scss/path
+
+      .Space.-sm
+
+      p.Text 2) @use in your .scss file.
+
+      .Space.-sm
+
+      figure.Code
+        pre.Code__item
+          code.
+            @use 'your/project/scss/path/smooth-gradient' as gradients;
+
+      .Space.-md
+
+      h4.Subheading from npm
+
+      .Space.-sm
+
+      p.Text 1) npm install.
+
+      .Space.-sm
+
+      figure.Code
+        pre.Code__item
+          code.
+            npm i smooth-gradient-sass-function
+
+      .Space.-sm
+
+      p.Text 2) @use in your .scss file.
+
+      .Space.-sm
+
+      figure.Code
+        pre.Code__item
+          code.
+            @use '../(to project root)/node_modules/smooth-gradient-sass-function/gradients';
+
+      .Space.-md
+
+      h4.Subheading write function
+
+      .Space.-sm
+
+      p.Text 3) write gradients.scrim() sass function and argument in argument of native linear-gradient() function.
+
+      .Space.-sm
+
+      figure.Code
+        pre.Code__item
+          code.
+            /* scrim gradient */
+            background-image: linear-gradient(to bottom, gradients.scrim());
+
+            /* ease-out-sine gradient */
+            background-image: linear-gradient(to bottom, gradients.easeOutSine());
+
+            /* clothoid gradient */
+            background-image: linear-gradient(to bottom, gradients.clothoid());
+
+      .Space.-md
+
+      h3.Heading Visual Sample
+
+      .Space.-sm
+
+      ul.List
+        li.List__item.-linear
+          span.List__label linear
+        li.List__item.-scrim
+          span.List__label scrim
+        li.List__item.-easeOutSine
+          span.List__label ease-out-sine
+        li.List__item.-clothoid
+          span.List__label clothoid
+
+      .Space.-md
+
+      h3.Heading On Image
+
+      .Space.-sm
+
+      ul.List
+        li.List__item.-image.-linear
+          span.List__label linear
+        li.List__item.-image.-scrim
+          span.List__label scrim
+        li.List__item.-image.-easeOutSine
+          span.List__label ease-out-sine
+        li.List__item.-image.-clothoid
+          span.List__label clothoid
+
+      .Space.-md
+
+      h3.Heading Any angel, Any color, Any opacity
+
+      .Space.-sm
+
+      p.Text Function params are Start color & Start Opacity.
+
+      .Space.-sm
+
+      figure.Code
+        pre.Code__item
+          code.
+            /* custom angle */
+            background-image: linear-gradient(to right, gradients.scrim());
+            background-image: linear-gradient(45deg, gradients.scrim());
+
+            /* #ff0000 color start (default is #000000) */
+            background-image: linear-gradient(to bottom, gradients.scrim(#ff0000));
+
+            /* 0.5 opacity start (default is 1) */
+            background-image: linear-gradient(to bottom, gradients.scrim(#000000, 0.5));
+
+      .Space.-sm
+
+      ul.List
+        li.List__item.-any1
+          span.List__label to right
+        li.List__item.-any2
+          span.List__label 45deg
+        li.List__item.-any3
+          span.List__label start #ff0000
+        li.List__item.-any4
+          span.List__label start opacity: 0.5
+
+      .Space.-lg
+      .Space.-lg
+
+    footer#footer.Footer
+      .Footer__inner
+        p.Footer__credit Code by
+          a(href="https://github.com/oti", target="_blank", rel="noopener") oti
+          | . Inspired by
+          a(
+            href="https://codepen.io/readymadegogo/pen/pPLJgR",
+            target="_blank",
+            rel="noopener"
+          ) Naoki Matsuda
+          |
+          | &
+          a(
+            href="https://codepen.io/lhermann/pen/qmpMGQ",
+            target="_blank",
+            rel="noopener"
+          ) Lukas Hermann
+
+        p.Footer__license
+          a(href="https://github.com/oti/smooth-gradient-sass-function/") GitHub
+          | , MIT License
