@@ -9,13 +9,11 @@ html(lang="en")
       content="You can get smooth gradient sass function"
     )
     meta(name="keywords", content="smooth,gradient,sass,scss,function,css")
-
     link(
       rel="stylesheet",
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Fira+Code&display=swap"
     )
     link(rel="stylesheet", href="style/style.scss")
-
     link(rel="canonical", href="https://smooth-gradient-sass-function.dskd.jp")
 
   body
@@ -30,7 +28,7 @@ html(lang="en")
 
       .Space.-sm
 
-      p.Text Gradients are scrim, easeOutSine, and clothoid curve.
+      p.Text Gradients are scrim, easeOutSine, and clothoid curve. Key is color-stop, value is opacity.
 
       .Space.-sm
 
@@ -40,19 +38,19 @@ html(lang="en")
           pre
             code.
               $scrim: (
-                1    : 0%,
-                0.738: 19%,
-                0.541: 34%,
-                0.382: 47%,
-                0.278: 56.5%,
-                0.194: 65%,
-                0.126: 73%,
-                0.075: 80.2%,
-                0.042: 86.1%,
-                0.021: 91%,
-                0.008: 95.2%,
-                0.002: 98.2%,
-                0    : 100%
+                1    : 0,
+                0.738: 0.19,
+                0.541: 0.34,
+                0.382: 0.47,
+                0.278: 0.565,
+                0.194: 0.65,
+                0.126: 0.73,
+                0.075: 0.802,
+                0.042: 0.861,
+                0.021: 0.91,
+                0.008: 0.952,
+                0.002: 0.982,
+                0    : 1
               );
 
         figure.Code__item.-col3
@@ -60,22 +58,22 @@ html(lang="en")
           pre
             code.
               $easeOutSine: (
-                1    : 0%,
-                0.917: 5.3%,
-                0.834: 10.6%,
-                0.753: 15.9%,
-                0.672: 21.3%,
-                0.591: 26.8%,
-                0.511: 32.5%,
-                0.433: 38.4%,
-                0.357: 44.5%,
-                0.283: 50.9%,
-                0.213: 57.7%,
-                0.147: 65%,
-                0.089: 72.9%,
-                0.042: 81.4%,
-                0.011: 90.6%,
-                0    : 100%
+                1    : 0,
+                0.917: 0.053,
+                0.834: 0.106,
+                0.753: 0.159,
+                0.672: 0.213,
+                0.591: 0.268,
+                0.511: 0.325,
+                0.433: 0.384,
+                0.357: 0.445,
+                0.283: 0.509,
+                0.213: 0.577,
+                0.147: 0.65,
+                0.089: 0.729,
+                0.042: 0.814,
+                0.011: 0.906,
+                0    : 1
               );
 
         figure.Code__item.-col3
@@ -83,13 +81,13 @@ html(lang="en")
           pre
             code.
               $clothoid: (
-                1    : 0%,
-                0.3  : 50%,
-                0.15 : 65%,
-                0.075: 75.5%,
-                0.037: 82.85%,
-                0.019: 88%,
-                0    : 100%
+                1    : 0,
+                0.3  : 0.50,
+                0.15 : 0.65,
+                0.075: 0.755,
+                0.037: 0.8285,
+                0.019: 0.88,
+                0    : 1
               );
 
       .Space.-md
