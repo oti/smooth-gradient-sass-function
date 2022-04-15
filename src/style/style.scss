@@ -1,20 +1,20 @@
 @charset 'UTF-8';
 
-@use "foundation/base";
+@forward "foundation/base";
 
 // レイアウト
-@use "layout/Header";
-@use "layout/Footer";
-@use "layout/Main";
+@forward "layout/Header";
+@forward "layout/Footer";
+@forward "layout/Main";
 
 // コンポーネント
-@use "object/component/Code";
-@use "object/component/Desc";
-@use "object/component/Heading";
-@use "object/component/List";
-@use "object/component/Space";
-@use "object/component/Subheading";
-@use "object/component/Text";
+@forward "object/component/Code";
+@forward "object/component/Desc";
+@forward "object/component/Heading";
+@forward "object/component/List";
+@forward "object/component/Space";
+@forward "object/component/Subheading";
+@forward "object/component/Text";
 
 // ユーティリティー
-@use "object/utility/VisuallyHidden";
+@forward "object/utility/VisuallyHidden";
