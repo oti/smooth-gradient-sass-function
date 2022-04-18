@@ -1,32 +1,25 @@
-@use '../../../smooth-gradient' as gradients;
+@use "../../../smooth-gradient" as gradients;
 
 .List {
   @at-root {
     & {
-      --colWidth: calc((var(--mainWidth) - var(--spaceGap) * 6) / 4);
-
       display: flex;
+      flex-wrap: wrap;
       gap: var(--spaceGap);
-      justify-content: space-between;
+      color: var(--colorSecondaryDark);
     }
 
     .List__item {
+      flex-grow: 1;
+      flex-basis: calc((var(--switcherThreshold) - 100%) * 999);
       box-sizing: border-box;
       list-style: none inside;
-      
-      flex: 1 1 auto;
-
-      display: flex;
-      flex-direction: column;
-
       border: 1px solid var(--colorBorder);
       border-radius: 4px;
-      min-width: var(--colWidth);
-      max-width: var(--colWidth);
       height: 300px;
       color: #fff;
       text-align: center;
-    
+
       &.-linear {
         background-image: linear-gradient(to bottom, #000, transparent);
       }
@@ -45,19 +38,23 @@
         background-size: cover;
 
         &.-linear {
-          background-image: linear-gradient(to bottom, #000, transparent), url(https://picsum.photos/175/300?random);
+          background-image: linear-gradient(to bottom, #000, transparent),
+            url(https://picsum.photos/175/300?random);
         }
         &.-scrim {
-          background-image: linear-gradient(to bottom, gradients.scrim()), url(https://picsum.photos/175/300?random);
+          background-image: linear-gradient(to bottom, gradients.scrim()),
+            url(https://picsum.photos/175/300?random);
         }
         &.-easeOutSine {
-          background-image: linear-gradient(to bottom, gradients.easeOutSine()), url(https://picsum.photos/175/300?random);
+          background-image: linear-gradient(to bottom, gradients.easeOutSine()),
+            url(https://picsum.photos/175/300?random);
         }
         &.-clothoid {
-          background-image: linear-gradient(to bottom, gradients.clothoid()), url(https://picsum.photos/175/300?random);
+          background-image: linear-gradient(to bottom, gradients.clothoid()),
+            url(https://picsum.photos/175/300?random);
         }
       }
-    
+
       &.-any1 {
         background-image: linear-gradient(to right, gradients.scrim());
       }
@@ -68,11 +65,15 @@
         background-image: linear-gradient(to bottom, gradients.scrim(#ff0000));
       }
       &.-any4 {
-        background-image: linear-gradient(to bottom, gradients.scrim(#000000, 0.5));
+        background-image: linear-gradient(
+          to bottom,
+          gradients.scrim(#000000, 0.5)
+        );
       }
     }
 
     .List__label {
+      display: inline-block;
       padding-top: calc(var(--spaceGap) * 1.5);
       padding-bottom: calc(var(--spaceGap) * 1.5);
     }
