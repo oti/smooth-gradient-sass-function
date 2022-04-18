@@ -1,12 +1,15 @@
 # Smooth Gradient Sass Function
 
-https://smooth-gradient-sass-function.dskd.jp/
+<https://smooth-gradient-sass-function.dskd.jp/>
 
 Inspired by [Naoki Matsuda's Pen](https://codepen.io/readymadegogo/pen/pPLJgR) & [Lukas Hermann's Pen](https://codepen.io/lhermann/pen/qmpMGQ).
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1e62fa99-883c-46bc-8bb2-948a81953597/deploy-status)](https://app.netlify.com/sites/smooth-gradient-sass-function/deploys)
 
-## You can get smooth gradient color-stops map for sass linear-gradient
+- **v3.x is compatible to dart-sass.**
+- [v2.x](./tree/v2.1.0) is compatible to libsass(node-sass).
+
+## You can get smooth gradient sass function
 
 Gradients are scrim, easeOutSine, and clothoid curve.
 
@@ -29,7 +32,7 @@ Gradients are scrim, easeOutSine, and clothoid curve.
     0.021: 0.91,
     0.008: 0.952,
     0.002: 0.982,
-    0: 1
+    0: 1,
   );
   @return _make-gradient-list($scrim, $color, $opacity, $start, $end);
 }
@@ -67,7 +70,7 @@ Gradients are scrim, easeOutSine, and clothoid curve.
     0.089: 0.729,
     0.042: 0.814,
     0.011: 0.906,
-    0: 1
+    0: 1,
   );
   @return _make-gradient-list($easeOutSine, $color, $opacity, $start, $end);
 }
@@ -81,12 +84,12 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 
   $clothoid: (
     1: 0,
-    0.3: 0.50,
+    0.3: 0.5,
     0.15: 0.65,
     0.075: 0.755,
     0.037: 0.8285,
     0.019: 0.88,
-    0: 1
+    0: 1,
   );
   @return _make-gradient-list($clothoid, $color, $opacity, $start, $end);
 }
@@ -96,36 +99,37 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 
 ### from git
 
-1) git clone and move to your project.
+1. git clone and move to your project.
 
 ```shell
 git clone git@github.com:oti/smooth-gradient-sass-function.git
 mv smooth-gradient-sass-function/src/_smooth-gradient.scss your/project/scss/path
 ```
 
-2) `@use` in your .scss file.
+2. `@use` in your .scss file.
 
 ```scss
-@use 'your/project/scss/path/smooth-gradient' as gradients;
+@use "your/project/scss/path/smooth-gradient" as gradients;
 ```
 
 ### from npm
 
-1) npm install.
+1. npm install.
 
 ```shell
 npm i smooth-gradient-sass-function
 ```
 
-2) `@use` in your .scss file.
+2. `@use` in your .scss file.
 
 ```scss
-@use '../(to project root)/node_modules/smooth-gradient-sass-function' as gradients;
+@use "../(to project root)/node_modules/smooth-gradient-sass-function" as
+  gradients;
 ```
 
 ### write function
 
-3) write `gradients.scrim()` sass function and argument in argument of native `linear-gradient()` function.
+3. write `gradients.scrim()` sass function and argument in argument of native `linear-gradient()` function.
 
 ```scss
 .elem {
@@ -141,32 +145,51 @@ npm i smooth-gradient-sass-function
   background-image: linear-gradient(to right, gradients.scrim()); // start left
 }
 ```
+
 ```scss
 .box {
-  background-image: linear-gradient(45deg, gradients.scrim()); // start left bottom
-}
-```
-```scss
-.box {
-  background-image: linear-gradient(to bottom, gradients.scrim(#ff0000)); // 1st arg is start color code(default: #000)
-}
-```
-```scss
-.box {
-  background-image: linear-gradient(to bottom, gradients.scrim(#ffff00, 0.5)); // 2nd arg is start opacity(default: 1)
-}
-```
-```scss
-.box {
-  background-image: linear-gradient(to bottom, gradients.scrim(#ffff00, 0.5, $start: 50%)); // 3rd arg is start position
-}
-```
-```scss
-.box {
-  background-image: linear-gradient(to bottom, gradients.scrim(#ffff00, 0.5, $start: 0, $end: 16em)); // 4th arg is end position
+  background-image: linear-gradient(
+    45deg,
+    gradients.scrim()
+  ); // start left bottom
 }
 ```
 
+```scss
+.box {
+  background-image: linear-gradient(
+    to bottom,
+    gradients.scrim(#ff0000)
+  ); // 1st arg is start color code(default: #000)
+}
+```
+
+```scss
+.box {
+  background-image: linear-gradient(
+    to bottom,
+    gradients.scrim(#ffff00, 0.5)
+  ); // 2nd arg is start opacity(default: 1)
+}
+```
+
+```scss
+.box {
+  background-image: linear-gradient(
+    to bottom,
+    gradients.scrim(#ffff00, 0.5, $start: 50%)
+  ); // 3rd arg is start position
+}
+```
+
+```scss
+.box {
+  background-image: linear-gradient(
+    to bottom,
+    gradients.scrim(#ffff00, 0.5, $start: 0, $end: 16em)
+  ); // 4th arg is end position
+}
+```
 
 ## LICENSE
 
