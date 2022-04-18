@@ -1,36 +1,20 @@
 .Code {
   @at-root {
     & {
-      --colWidth: calc((var(--mainWidth) - var(--spaceGap) * 5) / 3);
-
       display: flex;
+      flex-wrap: wrap;
       gap: var(--spaceGap);
-      justify-content: space-between;
       color: var(--colorSecondaryDark);
-
-      max-width: var(--mainWidth);
       overflow-x: auto;
-
-      &.-inline {
-        display: inline;
-        padding-right: calc(var(--spaceGap) * 0.5);
-        padding-left: calc(var(--spaceGap) * 0.5);
-        border-radius: 4px;
-        background-color: var(--colorSecondaryLight);
-      }
     }
 
     .Code__item {
+      flex-grow: 1;
+      flex-basis: calc((var(--switcherThreshold) - 100%) * 999);
       box-sizing: border-box;
-      flex: 1 1 auto;
       padding: var(--spaceGap);
       border-radius: 4px;
       background-color: var(--colorSecondaryLight);
-
-      &.-col3 {
-        min-width: var(--colWidth);
-        max-width: var(--colWidth);
-      }
     }
   }
 }
