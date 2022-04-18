@@ -7,7 +7,7 @@ Inspired by [Naoki Matsuda's Pen](https://codepen.io/readymadegogo/pen/pPLJgR) &
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1e62fa99-883c-46bc-8bb2-948a81953597/deploy-status)](https://app.netlify.com/sites/smooth-gradient-sass-function/deploys)
 
 - **v3.x is compatible to dart-sass.**
-- [v2.x](./tree/v2.1.0) is compatible to libsass(node-sass).
+- [v2.x](https://github.com/oti/smooth-gradient-sass-function/tree/v2.1.0) is compatible to libsass(node-sass).
 
 ## You can get smooth gradient sass function
 
@@ -101,7 +101,7 @@ Gradients are scrim, easeOutSine, and clothoid curve.
 
 1. git clone and move to your project.
 
-```shell
+```bash
 git clone git@github.com:oti/smooth-gradient-sass-function.git
 mv smooth-gradient-sass-function/src/_smooth-gradient.scss your/project/scss/path
 ```
@@ -142,52 +142,49 @@ npm i smooth-gradient-sass-function
 
 ```scss
 .box {
-  background-image: linear-gradient(to right, gradients.scrim()); // start left
+  // start left
+  background-image: linear-gradient(to right, gradients.scrim());
 }
 ```
 
 ```scss
 .box {
-  background-image: linear-gradient(
-    45deg,
-    gradients.scrim()
-  ); // start left bottom
+  // start left bottom
+  background-image: linear-gradient(45deg, gradients.scrim());
 }
 ```
 
 ```scss
 .box {
-  background-image: linear-gradient(
-    to bottom,
-    gradients.scrim(#ff0000)
-  ); // 1st arg is start color code(default: #000)
+  // 1st arg is start color code(default: #000)
+  background-image: linear-gradient(to bottom, gradients.scrim(#ff0000));
 }
 ```
 
 ```scss
 .box {
-  background-image: linear-gradient(
-    to bottom,
-    gradients.scrim(#ffff00, 0.5)
-  ); // 2nd arg is start opacity(default: 1)
+  // 2nd arg is start opacity(default: 1)
+  background-image: linear-gradient(to bottom, gradients.scrim(#ffff00, 0.5));
 }
 ```
 
 ```scss
 .box {
+  // 3rd arg is start position
   background-image: linear-gradient(
     to bottom,
     gradients.scrim(#ffff00, 0.5, $start: 50%)
-  ); // 3rd arg is start position
+  );
 }
 ```
 
 ```scss
 .box {
+  // 4th arg is end position
   background-image: linear-gradient(
     to bottom,
     gradients.scrim(#ffff00, 0.5, $start: 0, $end: 16em)
-  ); // 4th arg is end position
+  );
 }
 ```
 
