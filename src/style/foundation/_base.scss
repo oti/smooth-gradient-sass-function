@@ -1,13 +1,13 @@
 :root {
-  font-size: 16px;
-  --spaceGap: 10px;
-  --mainWidth: 768px;
+  --spaceGap: 1rem;
+  --mainWidth: 48rem;
   --colorPrimaryDark: #ac1557;
   --colorPrimaryLight: #fce4ec;
   --colorSecondaryDark: #303f9f;
   --colorSecondaryLight: #e8eaf6;
   --colorBg: #fefcfc;
   --colorBorder: #f0eaea;
+  --switcherThreshold: 32rem;
 }
 
 *,
