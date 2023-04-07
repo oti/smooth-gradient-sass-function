@@ -31,15 +31,13 @@
     "prepare": "husky install",
     "prettier": "prettier --write .",
     "start": "parcel src/index.pug --open",
-    "test": "npm run lint-css & npm run lint-html & npm run validate-html",
-    "validate-html": "html-validator --file=dist/index.html --verbose"
+    "test": "npm run lint-css & npm run lint-html & npm run validate-html"
   },
   "devDependencies": {
     "@parcel/transformer-pug": "^2.4.0",
     "@parcel/transformer-sass": "^2.4.0",
     "@prettier/plugin-pug": "^1.20.0",
     "autoprefixer": "^10.4.4",
-    "html-validator-cli": "^7.0.1",
     "husky": "^7.0.4",
     "markuplint": "^2.5.0",
     "parcel": "^2.4.0",
