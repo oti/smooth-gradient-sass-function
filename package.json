@@ -25,7 +25,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "parcel build src/index.pug --no-optimize --no-source-maps --public-url ./",
+    "build": "parcel build src/index.pug",
     "prepare": "husky install",
     "start": "parcel src/index.pug --open",
     "test": "stylelint 'dist/*.css' && markuplint 'dist/*.html'"
