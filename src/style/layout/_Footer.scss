@@ -1,9 +1,15 @@
+@use "../../smooth-gradient" as gradients;
+
 .Footer {
   @at-root {
     & {
       color: var(--colorBg);
       font-size: 0.75rem;
       line-height: 1.2;
+      background-image: linear-gradient(
+        to bottom,
+        gradients.clothoid(#000, 0.1)
+      );
       background-color: var(--colorPrimaryDark);
     }
 
@@ -16,7 +22,6 @@
       padding: 0.5rem;
       max-width: var(--mainWidth);
     }
-
 
     .Footer__credit {
       a:link,
