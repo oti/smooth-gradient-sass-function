@@ -1,6 +1,6 @@
 {
   "name": "smooth-gradient-sass-function",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "You can get smooth gradient color-stops map for sass linear-gradient",
   "files": [
     "_index.scss",
