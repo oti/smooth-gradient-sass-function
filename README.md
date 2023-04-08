@@ -123,8 +123,7 @@ npm i smooth-gradient-sass-function
 2. `@use` in your .scss file.
 
 ```scss
-@use "../(to project root)/node_modules/smooth-gradient-sass-function" as
-  gradients;
+@use "../(to project root)/node_modules/smooth-gradient-sass-function" as gradients;
 ```
 
 ### write function
